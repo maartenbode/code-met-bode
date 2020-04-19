@@ -11,6 +11,8 @@ class Contact extends Model
 
     protected $fillable = ['first_name', 'insertion', 'last_name', 'email', 'user_id'];
 
+    protected $dates = ['birthday'];
+
     public function getFullNameAttribute()
     {
         return join(' ', array_filter([$this->first_name, $this->insertion, $this->last_name]));
